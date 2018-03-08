@@ -9,10 +9,10 @@ review app [deployments] when PRs are opened.
 
 ```
 # Install dependencies
-npm install
+bin/yarn install
 
 # Run the bot
-npm start
+bin/yarn start
 ```
 
 See [docs/deploy.md](docs/deploy.md) if you would like to run your own instance of this app.
