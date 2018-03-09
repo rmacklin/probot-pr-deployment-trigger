@@ -11,7 +11,7 @@ async function createGitHubDeployment(context) {
     ref: pr_branch,
     repo: payload.repository.name,
     auto_merge: false,
-    environment: `${pull_request.user.login}-pr-${pull_request.number}`,
+    environment: `pr-${pull_request.number}`,
     description: `Review app for '${pr_branch}' branch`,
     transient_environment: true,
     required_contexts: [],
