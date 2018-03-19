@@ -5,8 +5,10 @@ async function createGitHubDeployment(context) {
   const pr_branch = pull_request.head.ref;
 
   context.log(`A PR was ${payload.action}. Branch: `, pr_branch);
+  const task = payload.action === 'reopened' ? 'redeploy' : 'deploy';
 
   const result = await octokit.repos.createDeployment({
+    task,
     owner: payload.repository.owner.login,
     ref: pr_branch,
     repo: payload.repository.name,
